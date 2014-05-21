@@ -1,0 +1,22 @@
+Name        : gnu-efi
+Version     : 3.0
+Release     : 1
+Group       : System/Boot
+License     : BSD-3-Clause
+Summary     : EFI development environment
+Description : gnu-efi is a library for building EFI applications.
+URL         : http://sourceforge.net/projects/gnu-efi/
+SCM         : http://sourceforge.net/p/%{name}/code/ci/master/tree/%{name}-%{version}/
+Sources     :
+    - http://download.sourceforge.net/%{name}/%{name}_%{version}v.orig.tar.gz
+ExclusiveArch: "%ix86 x86_64"
+
+Configure: none
+Builder: none
+
+PkgBR:
+    - pciutils
+
+Files:
+    - "%{_includedir}/efi/*"
+    - "%{_prefix}/lib/*"
