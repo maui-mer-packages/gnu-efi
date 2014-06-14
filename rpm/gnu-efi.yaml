@@ -1,7 +1,7 @@
 Name        : gnu-efi
 Version     : 3.0
 Release     : 1
-Group       : System/Boot
+Group       : System/Libraries
 License     : BSD-3-Clause
 Summary     : EFI development environment
 Description : gnu-efi is a library for building EFI applications.
