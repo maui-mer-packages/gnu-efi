@@ -11,6 +11,9 @@ Sources     :
     - http://download.sourceforge.net/%{name}/%{name}_%{version}v.orig.tar.gz
 ExclusiveArch: "%ix86 x86_64"
 
+Patches:
+    - stdarg.patch
+
 Configure: none
 Builder: none
 
