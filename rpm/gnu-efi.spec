@@ -11,7 +11,7 @@ Name:       gnu-efi
 Summary:    EFI development environment
 Version:    3.0
 Release:    1
-Group:      System/Boot
+Group:      System/Libraries
 License:    BSD-3-Clause
 ExclusiveArch:  %ix86 x86_64
 URL:        http://sourceforge.net/projects/gnu-efi/
