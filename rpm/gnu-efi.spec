@@ -17,6 +17,7 @@ ExclusiveArch:  %ix86 x86_64
 URL:        http://sourceforge.net/projects/gnu-efi/
 Source0:    http://download.sourceforge.net/%{name}/%{name}_%{version}v.orig.tar.gz
 Source100:  gnu-efi.yaml
+Patch0:     stdarg.patch
 BuildRequires:  pciutils
 
 %description
@@ -25,6 +26,8 @@ gnu-efi is a library for building EFI applications.
 %prep
 %setup -q -n %{name}-%{version}
 
+# stdarg.patch
+%patch0 -p1
 # >> setup
 # << setup
 
