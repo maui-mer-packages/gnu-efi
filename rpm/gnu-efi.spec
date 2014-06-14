@@ -17,6 +17,7 @@ ExclusiveArch:  %ix86 x86_64
 URL:        http://sourceforge.net/projects/gnu-efi/
 Source0:    http://download.sourceforge.net/%{name}/%{name}_%{version}v.orig.tar.gz
 Source100:  gnu-efi.yaml
+Source101:  gnu-efi-rpmlintrc
 Patch0:     stdarg.patch
 BuildRequires:  pciutils
 
