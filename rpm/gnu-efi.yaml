@@ -1,5 +1,5 @@
 Name        : gnu-efi
-Version     : 3.0
+Version     : 3.0u
 Release     : 1
 Group       : System/Libraries
 License     : BSD-3-Clause
@@ -8,11 +8,13 @@ Description : gnu-efi is a library for building EFI applications.
 URL         : http://sourceforge.net/projects/gnu-efi/
 SCM         : http://sourceforge.net/p/%{name}/code/ci/master/tree/%{name}-%{version}/
 Sources     :
-    - http://download.sourceforge.net/%{name}/%{name}_%{version}v.orig.tar.gz
+    - http://download.sourceforge.net/%{name}/%{name}_%{version}.orig.tar.gz
 ExclusiveArch: "%ix86 x86_64"
 
 Patches:
-    - stdarg.patch
+    - 0001-fix-compilation-on-x86_64-without-HAVE_USE_MS_ABI.patch
+    - 0002-be-more-pedantic-when-linking.patch
+    - 0003-Sample-boot-service-driver.patch
 
 Macros:
     - efidir;maui

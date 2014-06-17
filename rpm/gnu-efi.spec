@@ -10,15 +10,17 @@ Name:       gnu-efi
 %define efidir maui
 
 Summary:    EFI development environment
-Version:    3.0
+Version:    3.0u
 Release:    1
 Group:      System/Libraries
 License:    BSD-3-Clause
 ExclusiveArch:  %ix86 x86_64
 URL:        http://sourceforge.net/projects/gnu-efi/
-Source0:    http://download.sourceforge.net/%{name}/%{name}_%{version}v.orig.tar.gz
+Source0:    http://download.sourceforge.net/%{name}/%{name}_%{version}.orig.tar.gz
 Source100:  gnu-efi.yaml
-Patch0:     stdarg.patch
+Patch0:     0001-fix-compilation-on-x86_64-without-HAVE_USE_MS_ABI.patch
+Patch1:     0002-be-more-pedantic-when-linking.patch
+Patch2:     0003-Sample-boot-service-driver.patch
 BuildRequires:  pciutils
 
 %description
@@ -44,10 +46,14 @@ This package contains utilties for debugging and developing EFI systems.
 
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q -n %{name}-3.0
 
-# stdarg.patch
+# 0001-fix-compilation-on-x86_64-without-HAVE_USE_MS_ABI.patch
 %patch0 -p1
+# 0002-be-more-pedantic-when-linking.patch
+%patch1 -p1
+# 0003-Sample-boot-service-driver.patch
+%patch2 -p1
 # >> setup
 # << setup
 
