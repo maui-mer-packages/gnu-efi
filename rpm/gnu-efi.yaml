@@ -14,8 +14,8 @@ ExclusiveArch: "%ix86 x86_64"
 Patches:
     - stdarg.patch
 
-RpmLintIgnore:
-    - devel-file-in-non-devel-package
+Macros:
+    - efidir;maui
 
 Configure: none
 Builder: none
@@ -24,5 +24,23 @@ PkgBR:
     - pciutils
 
 Files:
-    - "%{_includedir}/efi/*"
-    - "%{_prefix}/lib/*"
+    - "%{_libdir}/*"
+
+SubPackages:
+    - Name: devel
+      Group: Development/System
+      Summary: Development Libraries and headers for EFI
+      Description: |
+        This package contains development headers and libraries for developing
+        applications that run under EFI (Extensible Firmware Interface).
+      Files:
+          - "%doc README.* ChangeLog"
+          - "%{_includedir}/efi"
+    - Name: utils
+      Group: Applications/System
+      Summary: Utilities for EFI systems
+      Description: |
+        This package contains utilties for debugging and developing EFI systems.
+      Files:
+          - "%dir /boot/efi/EFI/%{efidir}/"
+          - "%attr(0644,root,root) /boot/efi/EFI/%{efidir}/*.efi"
